@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+    <!-- Font-Awesome CDN -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+<!-- Chart.js CDN link -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.0/dist/chart.min.js"></script>
+    <!-- My css -->
+    <link rel="stylesheet" href="./styles.css">
+    <title>Home Page</title>
+  </head>
+  <body>
+<!-- Nav Bar -->
+<nav class="navbar navbar-expand-lg navbar-info bg-info">
+    <div class="container">
+      <a class="navbar-brand text-white" text href="index.html">PerryStore</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active text-white" aria-current="page" href="index.html">Dashboard</a>
+          </li>
+         
+        </ul>
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link text-white" aria-current="page" href="#">Admin Page</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="#">Logout</a>
+          </li>
+
+        </ul>
+
+       
+      
+    </div>
+</div>
+  </nav>
+  <!-- Top Area -->
+  <div class="container">
+    <div class="row mt-4">
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-header bg-info text-white">
+            Information
+          </div>
+            <div class="card-body">
+              <marquee behavior="" direction="">
+                <h4 class="my-4">New information
+  
+                </h4>
+              </marquee>
+
+            </div>
+          </div>
+          
+
+        </div>
+        <div class="col-md-8">
+          <div class="card">
+            <div class="card-header bg-info text-white">
+              Stats
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <a class="text-decoration-none text-dark" href="staff.html">
+                            <div class="card onec shadow text-center  p-3">
+                <h4>Staff <i class="fas fa-users"></i></h4>
+                <h4>4</h4>
+
+              </div>
+            </a>
+            </div>
+            <div class="col-md-4">
+              <a class="text-decoration-none text-dark" href="products.html">
+                          <div class="card onec shadow text-center p-3">
+              <h4>Products<i class="fas fa-box"></i></h4>
+              <h4>4</h4>
+
+            </div>
+          </a>
+          </div>
+          <div class="col-md-4">
+            <a class="text-decoration-none text-dark" href="orders.html">
+                        <div class="card onec shadow text-center  p-3">
+            <h4>Orders <i class="fas fa-shipping-fast"></i></h4>
+            <h4>4</h4>
+
+          </div>
+        </a>
+        </div>
+            </div>
+
+            
+          </div>
+        </div>
+     
+
+    </div>
+  </div>
+
+  <!-- Chart.js Section (Graphs) -->
+  <div class="container">
+    <div class="row my-5">
+      <div class="col-md-6">
+        <div class="bg-white">
+        <canvas id="myChart1" width="400" height="300"></canvas>
+        <script>
+        var ctx = document.getElementById('myChart1').getContext('2d');
+        var myChart1 = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                datasets: [{
+                    label: 'Products',
+                    data: [12, 19, 3, 5, 2, 3],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.9)',
+                        'rgba(54, 162, 235, 0.9)',
+                        'rgba(255, 206, 86, 0.9)',
+                        'rgba(75, 192, 192, 0.9)',
+                        'rgba(153, 102, 255, 0.9)',
+                        'rgba(255, 159, 64, 0.9)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+        </script>
+        </div>
+               </div>
+      <div class="col-md-6">
+        <div class="bg-white">
+        <canvas id="myChart2" width="400" height="300"></canvas>
+        <script>
+        var ctx = document.getElementById('myChart2').getContext('2d');
+        var myChart2 = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                datasets: [{
+                    label: 'Sales',
+                    data: [12, 19, 3, 5, 2, 3],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+        </script>
+        </div>
+               </div>
+    </div>
+  </div>
+
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
